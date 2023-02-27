@@ -1,7 +1,7 @@
-using SimpleInjectorWrapper.Scripts.Runtime.Reflection;
+using SimpleInjectorWrapper.Runtime.Reflection;
 using UnityEngine;
 
-namespace SimpleInjectorWrapper.Scripts.Runtime.Ioc
+namespace SimpleInjectorWrapper.Runtime.Ioc
 {
     public abstract class GameBehaviour : MonoBehaviour
     {

@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using SimpleInjectorWrapper.Scripts.Runtime.Ioc;
-using SimpleInjectorWrapper.Scripts.Runtime.Reflection.Members;
+using SimpleInjectorWrapper.Runtime.Ioc;
+using SimpleInjectorWrapper.Runtime.Reflection.Members;
 using UnityEngine;
 
-namespace SimpleInjectorWrapper.Scripts.Runtime.Reflection
+namespace SimpleInjectorWrapper.Runtime.Reflection
 {
     public static class InjectionManager
     {

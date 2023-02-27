@@ -1,6 +1,6 @@
 using System;
 
-namespace SimpleInjectorWrapper.Scripts.Runtime.Reflection
+namespace SimpleInjectorWrapper.Runtime.Reflection
 {
     public class InjectAttribute : Attribute
     {}

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace SimpleInjectorWrapper.Scripts.Runtime.Reflection
+namespace SimpleInjectorWrapper.Runtime.Reflection
 {
     public class TypeCache
     {

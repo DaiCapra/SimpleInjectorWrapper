@@ -1,4 +1,4 @@
-namespace SimpleInjectorWrapper.Scripts.Runtime.Ioc
+namespace SimpleInjectorWrapper.Runtime.Ioc
 {
     public interface IDraw
     {

@@ -1,8 +1,8 @@
-﻿using SimpleInjectorWrapper.Scripts.Runtime.Ioc;
-using SimpleInjectorWrapper.Scripts.Runtime.Reflection;
+﻿using SimpleInjectorWrapper.Runtime.Ioc;
+using SimpleInjectorWrapper.Runtime.Reflection;
 using UnityEngine;
 
-namespace SimpleInjectorWrapper.Scripts.Examples
+namespace SimpleInjectorWrapper.Examples
 {
     
     public class ExampleComponent : GameBehaviour

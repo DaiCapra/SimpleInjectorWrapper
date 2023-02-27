@@ -1,6 +1,6 @@
-using SimpleInjectorWrapper.Scripts.Runtime.Ioc;
+using SimpleInjectorWrapper.Runtime.Ioc;
 
-namespace SimpleInjectorWrapper.Scripts.Examples
+namespace SimpleInjectorWrapper.Examples
 {
     public class ExampleInstaller : Installer
     {

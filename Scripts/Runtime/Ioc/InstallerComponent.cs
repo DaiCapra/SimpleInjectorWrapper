@@ -1,8 +1,7 @@
-using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace SimpleInjectorWrapper.Scripts.Runtime.Ioc
+namespace SimpleInjectorWrapper.Runtime.Ioc
 {
     [DefaultExecutionOrder(-2000)]
     public class InstallerComponent<T> : MonoBehaviour where T : Installer, new()

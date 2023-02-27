@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using SimpleInjector;
 
-namespace SimpleInjectorWrapper.Scripts.Runtime.Ioc
+namespace SimpleInjectorWrapper.Runtime.Ioc
 {
     public class Installer : Container
     {

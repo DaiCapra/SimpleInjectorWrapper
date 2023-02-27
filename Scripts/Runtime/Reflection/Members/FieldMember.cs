@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace SimpleInjectorWrapper.Scripts.Runtime.Reflection.Members
+namespace SimpleInjectorWrapper.Runtime.Reflection.Members
 {
     public class FieldMember : Member
     {

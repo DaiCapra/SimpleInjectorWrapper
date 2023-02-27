@@ -1,7 +1,7 @@
-﻿using SimpleInjectorWrapper.Scripts.Runtime.Ioc;
+﻿using SimpleInjectorWrapper.Runtime.Ioc;
 using UnityEngine;
 
-namespace SimpleInjectorWrapper.Scripts.Examples
+namespace SimpleInjectorWrapper.Examples
 {
     public class ExampleService : IUpdate, IDraw
     {
