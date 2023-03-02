@@ -48,6 +48,7 @@ namespace SimpleInjectorWrapper.Runtime.Ioc
         }
 
 #if UNITY_EDITOR
+
         private void ModeChanged(PlayModeStateChange state)
         {
             if (state is PlayModeStateChange.ExitingPlayMode)
@@ -55,6 +56,7 @@ namespace SimpleInjectorWrapper.Runtime.Ioc
                 Dispose();
             }
         }
+
 #endif
 
         private void RegisterPlayModeChanged()

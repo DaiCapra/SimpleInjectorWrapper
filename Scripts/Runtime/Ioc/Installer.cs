@@ -1,6 +1,8 @@
+using SimpleInjector;
+using SimpleInjectorWrapper.Runtime.Reflection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using SimpleInjector;
 
 namespace SimpleInjectorWrapper.Runtime.Ioc
 {
@@ -9,14 +11,14 @@ namespace SimpleInjectorWrapper.Runtime.Ioc
         private readonly List<IDraw> _singletonDrawers;
         private readonly List<IUpdate> _singletonUpdaters;
 
+        public static Installer Instance { get; set; }
+
         public Installer()
         {
             _singletonUpdaters = new List<IUpdate>();
             _singletonDrawers = new List<IDraw>();
             Instance = this;
         }
-
-        public static Installer Instance { get; set; }
 
         public void Draw()
         {
@@ -26,14 +28,20 @@ namespace SimpleInjectorWrapper.Runtime.Ioc
             }
         }
 
+        public object Get(Type type)
+        {
+            return GetInstance(type);
+        }
+
+        public T Get<T>() where T : class
+        {
+            return GetInstance<T>();
+        }
+
         public void Install()
         {
             InstallBindings();
             SetupSingletons();
-        }
-
-        protected virtual void InstallBindings()
-        {
         }
 
         public void Update()
@@ -44,10 +52,8 @@ namespace SimpleInjectorWrapper.Runtime.Ioc
             }
         }
 
-        private void SetupSingletons()
+        protected virtual void InstallBindings()
         {
-            AddInterfacesFromSingletons(_singletonUpdaters);
-            AddInterfacesFromSingletons(_singletonDrawers);
         }
 
         private void AddInterfacesFromSingletons<T>(List<T> list)
@@ -70,6 +76,18 @@ namespace SimpleInjectorWrapper.Runtime.Ioc
                 .Where(t => t.Lifestyle == Lifestyle.Singleton)
                 .ToList();
             return singletons;
+        }
+
+        private void SetupSingletons()
+        {
+            AddInterfacesFromSingletons(_singletonUpdaters);
+            AddInterfacesFromSingletons(_singletonDrawers);
+
+            foreach (var registration in GetCurrentRegistrations())
+            {
+                var instance = GetInstance(registration.ServiceType);
+                InjectionManager.Inject(instance);
+            }
         }
     }
 }

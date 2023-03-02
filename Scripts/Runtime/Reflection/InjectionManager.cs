@@ -1,9 +1,9 @@
+using SimpleInjectorWrapper.Runtime.Ioc;
+using SimpleInjectorWrapper.Runtime.Reflection.Members;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using SimpleInjectorWrapper.Runtime.Ioc;
-using SimpleInjectorWrapper.Runtime.Reflection.Members;
 using UnityEngine;
 
 namespace SimpleInjectorWrapper.Runtime.Reflection
@@ -34,6 +34,10 @@ namespace SimpleInjectorWrapper.Runtime.Reflection
             }
 
             var container = Installer.Instance;
+            if (obj is IContainer c)
+            {
+                c.Container = container;
+            }
 
             foreach (var member in members)
             {
